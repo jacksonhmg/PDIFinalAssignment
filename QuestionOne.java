@@ -25,9 +25,10 @@ public class QuestionOne
                 }
             }
         }
-    System.out.println(Arrays.deepToString(theDoubArray).replaceAll("],", "]," + System.getProperty("line.separator")));
-
-
+    String arrayToString = Arrays.deepToString(theDoubArray).replaceAll("],", "]," + System.getProperty("line.separator"));
+    //System.out.println(Arrays.deepToString(theDoubArray).replaceAll("],", "]," + System.getProperty("line.separator")));
+    System.out.println(arrayToString);
+    writeOneRow("temp.txt", arrayToString);
     sc.close();
     }
 
@@ -47,5 +48,18 @@ public class QuestionOne
                             {1, 60, 10, 80, 20, 30}};
 
         return anArray;
+    }
+
+    public static void writeOneRow(String pFilename, String pInputString){
+        FileOutputStream fileStrm = null;
+        PrintWriter pw;
+        try {
+            fileStrm = new FileOutputStream(pFilename);
+            pw = new PrintWriter(fileStrm);
+            pw.println(pInputString);
+            pw.close();
+        } catch (IOException e) {
+            System.out.println("Error in writing to file" + e.getMessage());
+        }
     }
 }

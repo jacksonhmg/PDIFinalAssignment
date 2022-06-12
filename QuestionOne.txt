@@ -4,15 +4,15 @@ main:
     print "Enter an amount that all values in the 2D array will be transformed by. You may enter a value between 0.75 and 1.25."
     inputDoub EQUAlS TO next double input
     
+    FOR row EQUALS TO 0, row LESS THAN theArray's length, row INCREMENT BY 1)
+        FOR column EQUALS TO 0, column LESS THAN theArray[0]'s length, column INCREMENT BY 1)
+            theDoubArray[row][column] EQUALS TO ((double) theArray[row][column]) MULTIPLIED BY inputDoub
+            IF theDoubArray[row][column] IS GREATER THAN 65636
+                theDoubArray[row][column] EQUALS TO -1
+
+    String arrayToString EQUALS TO theDoubArray as a string
+    print "arrayToString"
+    writeO
+
+        
     
-    
-    
-    
-    
-    
-    
-    for (int row = 0; row < theArray.length; row++) {
-        for (int column = 0; column < theArray[0].length; column++) {
-            theDoubArray[row][column] = ((double) theArray[row][column])*inputDoub;
-        }
-    }
