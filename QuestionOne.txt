@@ -1,4 +1,5 @@
 main:
+    create Scanner sc
     theArray EQUALS TO arrayGenerator
     double theDoubArray [][] EQUALS TO new double[theArray length][theArray[0] length] 
     print "Enter an amount that all values in the 2D array will be transformed by. You may enter a value between 0.75 and 1.25."
@@ -6,13 +7,25 @@ main:
     
     FOR row EQUALS TO 0, row LESS THAN theArray's length, row INCREMENT BY 1)
         FOR column EQUALS TO 0, column LESS THAN theArray[0]'s length, column INCREMENT BY 1)
-            theDoubArray[row][column] EQUALS TO ((double) theArray[row][column]) MULTIPLIED BY inputDoub
+            theDoubArray[row][column] EQUALS TO ((double) theArray[row][column]) MULTIPLIED BY inputDoub, ROUNDED TO A WHOLE NUMBER
             IF theDoubArray[row][column] IS GREATER THAN 65636
                 theDoubArray[row][column] EQUALS TO -1
 
     String arrayToString EQUALS TO theDoubArray as a string
     print "arrayToString"
-    writeO
+    writeOneRow("temp.txt", arrayToString)
 
+    close sc
+
+writeOneRow(pFilename, pInputString):
+    try
+        initialise fileStrm as fileOutputStream
+        initialise pw as PrintWriter
+        create fileStrm as fileOutputStream of pFileName
+        create pw as PrintWriter of fileStrm
+        pw prints pInputString
+        pw closes
+    catch
+        print "error in writing to file" + error message
         
     
