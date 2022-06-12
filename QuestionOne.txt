@@ -1,0 +1,18 @@
+main:
+    theArray EQUALS TO arrayGenerator
+    double theDoubArray [][] EQUALS TO new double[theArray length][theArray[0] length] 
+    print "Enter an amount that all values in the 2D array will be transformed by. You may enter a value between 0.75 and 1.25."
+    inputDoub EQUAlS TO next double input
+    
+    
+    
+    
+    
+    
+    
+    
+    for (int row = 0; row < theArray.length; row++) {
+        for (int column = 0; column < theArray[0].length; column++) {
+            theDoubArray[row][column] = ((double) theArray[row][column])*inputDoub;
+        }
+    }
