@@ -13,10 +13,22 @@ public class QuestionTwo
     {
         Scanner sc = new Scanner(System.in);
         int theArray [][] = arrayGenerator();
-        
+        double inputDoub = 0;
+
         double theDoubArray [][] = new double[theArray.length][theArray[0].length]; //creating theDoubArray as the same size of theArray
         System.out.println("Enter an amount that all values in the 2D array will be transformed by. You may enter a value between 0.75 and 1.25.");
-        double inputDoub = sc.nextDouble();
+        try{
+            inputDoub = sc.nextDouble();
+            while((inputDoub < 0.75) || (inputDoub > 1.25)){
+                System.out.println("Not within the range! Please enter again");
+                inputDoub = sc.nextDouble();
+            }
+        } catch(InputMismatchException e){
+            System.out.println("Incorrect input! Entire array is invalid because " + e.getMessage());
+            sc.close();
+            return;
+        }
+        
         for (int row = 0; row < theArray.length; row++) {
             for (int column = 0; column < theArray[0].length; column++) {
                 theDoubArray[row][column] = Math.round(((double) theArray[row][column])*inputDoub); //type casting the integer array values into the double array, multiplying it by our input and then rounding it to a whole number
