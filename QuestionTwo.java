@@ -7,7 +7,7 @@
 import java.util.*;
 import java.io.*;
 
-public class QuestionOne
+public class QuestionTwo
 {
     public static void main(String [] args)
     {
